@@ -7,14 +7,15 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp11ObjectsAsInClass
 {
-  public class Sprite : Point
+  public class Sprite : Point  //ירושה מהמחלקה האם
   {
     private int dX;
     private int dY;
 
-    public Sprite(int x, int y) : base(x, y)
-    {
-
+    public Sprite(int x, int y) : base(x, y) // חייבים בנאי אחד לפחות שמקבל פרמטרים 
+    { // כמו הבנאי של המחלקה האם
+      // השרשור :base(x,y)
+      // שולח את הפרמטרים שהתקבלו לבנאי של המחלקה האם
     }
     public void Draw()
     {

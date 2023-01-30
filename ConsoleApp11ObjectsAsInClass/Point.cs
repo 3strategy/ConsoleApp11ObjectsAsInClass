@@ -8,9 +8,12 @@ namespace ConsoleApp11ObjectsAsInClass
 {
   public class Point
   {
-    protected int x, y;
+    protected int x, y; //protected הפכתי ל 
+    // זה נותן מעט יותר חופש : מאפשר למחלקה הבת להתנהל כאילו 
+    // המשתנים הללו שייכים למחלקה עצמה
+    // getters & setters ללא צורך בשימוש ב
     private string name;
-    private static char currentLetter = 'A';
+    private static char currentLetter = 'A'; // משתנה מסוג סטאטיק משותף בין כל העצמים במחלקה
 
     public Point(int x, int y)
     {
