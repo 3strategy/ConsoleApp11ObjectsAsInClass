@@ -5,14 +5,18 @@ namespace ConsoleApp11ObjectsAsInClass
   public class Program
   {
     static int speed = 1000;
-    static Sprite player = new Sprite(5, 5);
+    static Sprite player = new Sprite(5, 5, ConsoleKey.RightArrow,
+      ConsoleKey.LeftArrow, ConsoleKey.UpArrow, ConsoleKey.DownArrow);
+    static Sprite player2 = new Sprite(9, 9, ConsoleKey.D,
+      ConsoleKey.A, ConsoleKey.W, ConsoleKey.S);
     static void Main(string[] args)
     {
       while (true)
       {
         while (!Console.KeyAvailable) // לולאת המשחק רצה כל עוד לא נלחץ מקש
-        {  
+        {
           player.Move();
+          player2.Move();
           Thread.Sleep(speed);
         }
         // כל מה שכאן קורה לאחר שנלחץ מקש
@@ -40,6 +44,7 @@ namespace ConsoleApp11ObjectsAsInClass
         //foreach (var player in players)
         //  player.HandleKeys(key);
         player.HandleKeys(key);
+        player2.HandleKeys(key);
       }
     }
   }

@@ -12,6 +12,16 @@ namespace ConsoleApp11ObjectsAsInClass
     private int dX;
     private int dY;
 
+    private ConsoleKey rightK, leftK, upK, downK;
+    public Sprite(int x, int y, ConsoleKey rightK, ConsoleKey leftK, 
+      ConsoleKey upK, ConsoleKey downK) : this(x, y) // שירשור לבנאי השני שלנו
+    {
+      this.rightK = rightK;
+      this.leftK = leftK;
+      this.upK = upK;
+      this.downK = downK;
+    }
+
     public Sprite(int x, int y) : base(x, y) // חייבים בנאי אחד לפחות שמקבל פרמטרים 
     { // כמו הבנאי של המחלקה האם
       // השרשור :base(x,y)
@@ -25,13 +35,13 @@ namespace ConsoleApp11ObjectsAsInClass
 
     public void HandleKeys(ConsoleKey key)
     {
-      if (key == ConsoleKey.RightArrow)
+      if (key == rightK)
         dX++;
-      else if (key == ConsoleKey.LeftArrow)
+      else if (key == leftK)
         dX--;
-      else if (key == ConsoleKey.DownArrow)
+      else if (key == downK)
         dY++;
-      else if (key == ConsoleKey.UpArrow) dY--;
+      else if (key == upK) dY--;
 
     }
 
