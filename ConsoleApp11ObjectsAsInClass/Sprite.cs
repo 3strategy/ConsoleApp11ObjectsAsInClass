@@ -22,7 +22,7 @@ namespace ConsoleApp11ObjectsAsInClass
     /// The assigned keys that will move the object
     /// </summary>
     private ConsoleKey rightK, leftK, upK, downK;
-    public Sprite(int x, int y, string shape, ConsoleKey rightK, ConsoleKey leftK, 
+    public Sprite(int x, int y, string shape, ConsoleKey rightK, ConsoleKey leftK,
       ConsoleKey upK, ConsoleKey downK) : this(x, y) // שירשור לבנאי השני שלנו
     {
       this.shape = shape;
@@ -56,7 +56,7 @@ namespace ConsoleApp11ObjectsAsInClass
     }
     public void Collision(Sprite other)
     {
-      if(Distance(other)<2)
+      if (Distance(other) < 2)
       {
         int tempDX = dX;
         int tempDY = dY;
@@ -72,8 +72,16 @@ namespace ConsoleApp11ObjectsAsInClass
       Draw();
       Console.ForegroundColor = ConsoleColor.White;
     }
+    /// <summary>
+    /// Happens every game loop.
+    /// usually game loop will run 50-100 times a second (on a high res graphic layout)
+    /// </summary>
     public void Move()
     {
+      if (x + dX < 0 || x + dX >= 119) //120 is my max width
+        dX = -dX;
+      if (y + dY < 0 || y + dY >= 33) //34 is my max height
+        dY = -dY;
       Erase();
       x += dX;
       y += dY;
