@@ -9,13 +9,23 @@ namespace ConsoleApp11ObjectsAsInClass
 {
   public class Sprite : Point  //ירושה מהמחלקה האם
   {
+    /// <summary>
+    /// velocity (object speed)
+    /// </summary>
     private int dX;
     private int dY;
-
+    /// <summary>
+    /// the shape of the object that will be displayed
+    /// </summary>
+    private string shape;
+    /// <summary>
+    /// The assigned keys that will move the object
+    /// </summary>
     private ConsoleKey rightK, leftK, upK, downK;
-    public Sprite(int x, int y, ConsoleKey rightK, ConsoleKey leftK, 
+    public Sprite(int x, int y, string shape, ConsoleKey rightK, ConsoleKey leftK, 
       ConsoleKey upK, ConsoleKey downK) : this(x, y) // שירשור לבנאי השני שלנו
     {
+      this.shape = shape;
       this.rightK = rightK;
       this.leftK = leftK;
       this.upK = upK;
@@ -30,7 +40,7 @@ namespace ConsoleApp11ObjectsAsInClass
     public void Draw()
     {
       Console.SetCursorPosition(x, y);
-      Console.WriteLine("X");
+      Console.WriteLine(shape);
     }
 
     public void HandleKeys(ConsoleKey key)
@@ -44,7 +54,18 @@ namespace ConsoleApp11ObjectsAsInClass
       else if (key == upK) dY--;
 
     }
-
+    public void Collision(Sprite other)
+    {
+      if(Distance(other)<2)
+      {
+        int tempDX = dX;
+        int tempDY = dY;
+        dX = other.dX;
+        dY = other.dY;
+        other.dX = tempDX;
+        other.dY = tempDY;
+      }
+    }
     public void Erase()
     {
       Console.ForegroundColor = ConsoleColor.Black;

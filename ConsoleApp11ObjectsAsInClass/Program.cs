@@ -5,9 +5,9 @@ namespace ConsoleApp11ObjectsAsInClass
   public class Program
   {
     static int speed = 1000;
-    static Sprite player = new Sprite(5, 5, ConsoleKey.RightArrow,
+    static Sprite player = new Sprite(9, 9, "X", ConsoleKey.RightArrow,
       ConsoleKey.LeftArrow, ConsoleKey.UpArrow, ConsoleKey.DownArrow);
-    static Sprite player2 = new Sprite(9, 9, ConsoleKey.D,
+    static Sprite player2 = new Sprite(5, 5, "Y", ConsoleKey.D,
       ConsoleKey.A, ConsoleKey.W, ConsoleKey.S);
     static void Main(string[] args)
     {
@@ -17,6 +17,7 @@ namespace ConsoleApp11ObjectsAsInClass
         {
           player.Move();
           player2.Move();
+          player.Collision(player2);
           Thread.Sleep(speed);
         }
         // כל מה שכאן קורה לאחר שנלחץ מקש
