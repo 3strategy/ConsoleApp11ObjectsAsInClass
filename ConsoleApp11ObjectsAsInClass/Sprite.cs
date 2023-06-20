@@ -36,6 +36,8 @@ namespace ConsoleApp11ObjectsAsInClass
     { // כמו הבנאי של המחלקה האם
       // השרשור :base(x,y)
       // שולח את הפרמטרים שהתקבלו לבנאי של המחלקה האם
+            if (shape == "")
+                shape = "O";
     }
     public void Draw()
     {
