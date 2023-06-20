@@ -10,11 +10,11 @@ namespace ConsoleApp11ObjectsAsInClass
     {
         public BrickSprite(int x, int y) : base(x, y)
         {
-
+            dY = 1; dX = 0;
         }
         private int rrow, rcol;
 
-        private bool alive;
+        private bool alive = true;
         public bool GetAlive()
         {
             return alive;

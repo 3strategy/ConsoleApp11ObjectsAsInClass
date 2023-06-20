@@ -12,8 +12,8 @@ namespace ConsoleApp11ObjectsAsInClass
         /// <summary>
         /// velocity (object speed)
         /// </summary>
-        private int dX;
-        private int dY;
+        protected int dX;
+        protected int dY;
         /// <summary>
         /// the shape of the object that will be displayed
         /// </summary>
