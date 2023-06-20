@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp11ObjectsAsInClass
 {
-    public class BrickSprite: Sprite
+    public class BrickSprite : Sprite
     {
-        public BrickSprite(int x, int y):base(x,y)
+        public BrickSprite(int x, int y) : base(x, y)
         {
-            
+
         }
         private int rrow, rcol;
 
